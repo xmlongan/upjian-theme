@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <div class="w3-row w3-white w3-padding w3-hide-medium w3-hide-small" style="margin-top:5px;">
+      <div class="w3-half">
+        <a href="http://www.upjian.com/" class="upjian-logo">upjian<span class="dotcom">.com</span></a>
+      </div>
+      <div class="w3-half w3-wide">
+        <div class="w3-right" style="font-family:'ABeeZee';font-size:24.5px;">
+          up(上) + jian(肩)
+        </div>
+      </div>
+    </div>
+
+    <!-- navigation -->
+    {{ partial "nav.html" . }}
+
+    <nav class="w3-sidebar w3-collapse w3-white w3-card-2" id="sidenav">
+      <div class="w3-bar-block">
+        <button class="w3-bar-item w3-button w3-hide-large w3-right-align" onclick="close_sidenav()">&times;</button>
+        <div class="w3-container">
+          <h4>数学</h4>
+        </div>
+        <a class="w3-bar-item w3-button" href="/math/">math</a>
+
+        <div class="w3-container">
+          <h4>英语</h4>
+        </div>
+
+        <div class="w3-container">
+          <h4>编程</h4>
+        </div>
+      </div>
+    </nav>
+    <!-- main content -->
+    <div class="w3-main">
+      <div class="w3-container">
+        <h1>{{ .Title }}</h1>
+        <div class="">
+          {{ .Content }}
+        </div>
+      </div>
+
+      {{ partial "footer.html" . }}
+    </div>

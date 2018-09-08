@@ -1,0 +1,25 @@
+<div class="footer w3-container w3-white">
+		<hr>
+		<div class="w3-center w3-small w3-opacity">
+			<a href="http://www.miitbeian.gov.cn">沪ICP备17052780号</a>
+			<p>&copy; 2017-2018，Yanfeng Wu，联系邮箱：yanfeng1223@126.com</p>
+      <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="{{ "images/hugo-logo.png" | relURL }}" width="22" height="22"></a>
+		</div>
+		<br><br>
+</div>
+
+<script>
+  function open_sidenav() {
+    document.getElementById('sidenav').style.display = 'block';
+  }
+  function close_sidenav() {
+    document.getElementById('sidenav').style.display = 'none';
+  }
+</script>
+
+</div>
+{{ partial "footer_highlightjs" . }}
+{{ partial "footer_mathjax" . }}
+<!-- template "_internal/google_analytics.html" . -->
+</body>
+</html>

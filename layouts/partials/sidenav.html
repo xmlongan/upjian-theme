@@ -1,0 +1,19 @@
+<div class="w3-sidebar w3-collapse w3-card-2 w3-bar-block" id="sidenav">
+  <button class="w3-bar-item w3-button w3-hide-large w3-right-align" onclick="close_sidenav()">&times;</button>
+  {{ $currentPage := . }}
+  {{ $section := .Section }}
+  <h3>{{ .Section }}</h3>
+
+  {{ range .Site.Menus.main }}
+    {{ $url := replace .URL "/" "" }}
+    {{ if eq $url $section }}
+      {{ range .Children }}
+        <a href="{{ .URL }}" class="w3-bar-item w3-button {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}">
+          {{ .Name }}
+        </a>
+      {{ end }}
+    {{ end }}
+
+  {{ end }}
+
+</div>

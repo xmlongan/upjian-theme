@@ -1,0 +1,73 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/images/logo.png">
+
+<!-- refer to the fonts 'ABeeZee' and 'Noto Serif CJK SC' -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=ABeeZee'>
+<link rel="stylesheet" href="https://github.com/googlei18n/noto-cjk/blob/master/NotoSerifCJKsc-Regular.otf">
+<!-- w3.css -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+{{ else }}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ end }}
+
+{{ if eq .URL "/" }}
+<meta property="description" content="{{ .Site.Params.description }}">
+{{ else }}
+  {{ if .Description }}
+  <meta property="description" content="{{ .Description }}">
+  {{ end }}
+{{ end }}
+
+{{ if .Keywords }}
+<meta property="keywords" content="{{ delimit .Keywords ", " }}">
+{{ end }}
+
+<style media="screen">
+  .upjian-logo {
+    font-family:'ABeeZee';
+    text-decoration:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-size:37px;
+    letter-spacing:3px;
+    color:#555555;
+    display:block;
+  }
+  .upjian-logo .dotcom {color:#4CAF50}
+  .topnav {
+    font-size:17px;
+    width:100%;
+    padding:0;
+    letter-spacing:2px;
+    font-family:"ABeeZee",Arial,sans-serif;
+  }
+  /* a.topnav-icons {
+    font-size:20px !important;
+  } */
+  a.topnav-icons.fa-home {font-size:24px !important}
+  /* a.topnav-icons.fa-menu {font-size:24px !important} */
+  .w3-main {margin-left:200px;}
+  .w3-sidebar {
+    z-index:3;
+    width:200px;
+    overflow:hidden !important;
+    position:absolute !important;
+    margin-bottom:-155px;
+  }
+  .w3-sidebar .w3-bar-block .w3-bar-item{
+    padding:0 16px;
+    font-size:16px;
+  }
+  #sidenav a.active {background-color:#4CAF50;color:#ffffff;width: 100%;}
+
+  body {font-family: 'Noto Serif CJK SC'}
+
+</style>
+
+{{ partial "head_highlightjs" . }}

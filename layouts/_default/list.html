@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<div class="w3-main" style="border: 1px dotted red">
+
+  {{ if and .IsHome .Content }}
+    <div class="">
+      {{ .Content }}
+    </div>
+  {{ else }}
+    <div class="w3-center">
+      {{ range .Pages }}
+        <article class="">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span>
+            {{ .Date.Format "2006/01/02" }}
+          </span>
+        </article>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ partial "footer.html" . }}
+</div>

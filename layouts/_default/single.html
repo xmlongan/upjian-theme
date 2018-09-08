@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<div class="w3-main" style='border: 1px dotted red'>
+  <div class="w3-row">
+    <div class="w3-col l10 m12">
+      <div class="w3-container">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <div class="w3-col l2 m12" style="display:none;">
+      <div class="w3-container">
+        <p>right side (on large screen) left for something in the future</p>
+      </div>
+    </div>
+  </div>
+
+  {{ partial "footer.html" . }}
+</div>
